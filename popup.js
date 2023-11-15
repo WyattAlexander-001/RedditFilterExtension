@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const saveButton = document.getElementById('save');
     const newPhraseInput = document.getElementById('newPhrase');
     const phraseListDiv = document.getElementById('phraseList');
+    const clearAllButton = document.getElementById('clearAll');
+
 
     // Load and display the stored phrases
     chrome.storage.sync.get('filteredPhrases', function(data) {
@@ -34,4 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Phrases saved!');
         });
     });
+
+     // Event listener for the Clear All button
+     clearAllButton.addEventListener('click', function() {
+        // Clear the displayed phrases
+        phraseListDiv.innerHTML = '';
+
+        // Clear the phrases from storage
+        chrome.storage.sync.set({ 'filteredPhrases': [] }, function() {
+            console.log('All phrases cleared');
+        });
+    });   
 });
