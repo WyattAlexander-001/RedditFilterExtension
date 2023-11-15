@@ -1,0 +1,19 @@
+body {
+    width: 500px;
+    padding: 5px;
+}
+
+#clearAll {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#phraseList {
+    margin-bottom: 10px;
+}
+
+#newPhrase {
+    width: 300px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

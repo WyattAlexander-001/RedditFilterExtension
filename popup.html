@@ -2,19 +2,11 @@
 <html>
 <head>
     <title>Reddit Phrase Filter</title>
-    <style>
-        body {
-            width: 400px;
-            padding: 5px;
-        }
-        #phraseList {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Reddit Phrase Filter</h1>
-    
+<form>
     <input type="text" id="newPhrase" placeholder="Add Phrase, No Quotes">
 
     <button id="addPhrase">Add</button>
@@ -22,6 +14,7 @@
     <button id="clearAll">Clear All Phrases</button>
     <hr>
     <div id="phraseList"></div>
+</form>
     <script src="popup.js"></script>
 </body>
 </html>
