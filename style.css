@@ -27,19 +27,18 @@ button{
     border-radius: 25px;
 }
 
+button:hover{
+    background-color:RGBA(255, 86, 0, 1) ;
+}
+
 .phraseDiv {
     display: flex;
     align-items: center; /* Aligns items vertically centered */
     margin-bottom: 5px; /* Spacing between each phrase */
 }
 
-.deleteButton {
-    margin-left: 10px;
-    color: red;
-    border: none;
-    background: none;
-    cursor: pointer;
-    align-self: center; /* Center the button */
+input{
+    border-radius: 20px;
 }
 
 
