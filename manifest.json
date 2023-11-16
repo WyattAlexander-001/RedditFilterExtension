@@ -1,17 +1,18 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Reddit Phrase Filter",
     "version": "1.0",
     "description": "Filter specific phrases from Reddit posts",
-    "permissions": ["activeTab", "storage"],
+    "permissions": ["storage"],
+    "host_permissions": ["*://*.reddit.com/*"],
+    "action": {
+      "default_popup": "popup.html"
+    },
     "content_scripts": [
       {
         "matches": ["*://*.reddit.com/*"],
         "js": ["content.js"]
       }
-    ],
-    "browser_action": {
-      "default_popup": "popup.html"
-    }
+    ]
   }
   
