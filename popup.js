@@ -49,5 +49,40 @@ document.addEventListener('DOMContentLoaded', function() {
         chrome.storage.sync.set({ 'filteredPhrases': [] }, function() {
             console.log('All phrases cleared');
         });
-    });   
+    });
+    
+    // function addPhraseToDisplay(phrase) {
+    //     const phraseDiv = document.createElement('div');
+    //     phraseDiv.className = 'phraseDiv'; // Apply class for styling
+    
+    //     const phraseText = document.createElement('span'); // Create a span for the phrase text
+    //     phraseText.textContent = phrase;
+    
+    //     const deleteButton = document.createElement('button');
+    //     deleteButton.textContent = 'X';
+    //     deleteButton.className = 'deleteButton'; 
+    //     deleteButton.onclick = function() {
+    //         phraseDiv.remove();
+    //         savePhrases(); 
+    //     };
+    
+    //     // Append the text and button to the phraseDiv
+    //     phraseDiv.appendChild(phraseText);
+    //     phraseDiv.appendChild(deleteButton);
+    //     phraseListDiv.appendChild(phraseDiv);
+    // }
+    
+
+    // function savePhrases() {
+    //     const phrases = Array.from(phraseListDiv.children).map(div => {
+    //         const phraseSpan = div.querySelector('span');
+    //         return phraseSpan.textContent.trim();
+    //     });
+    //     console.log("Saving phrases:", phrases); // Log the phrases to be saved
+    //     chrome.storage.sync.set({ 'filteredPhrases': phrases }, function() {
+    //         console.log('Phrases updated!');
+    //     });
+    // }
+    
+ 
 });

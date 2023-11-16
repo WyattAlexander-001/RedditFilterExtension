@@ -26,3 +26,20 @@ button{
     background-color: gold;
     border-radius: 25px;
 }
+
+.phraseDiv {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+    margin-bottom: 5px; /* Spacing between each phrase */
+}
+
+.deleteButton {
+    margin-left: 10px;
+    color: red;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-self: center; /* Center the button */
+}
+
+
