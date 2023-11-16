@@ -4,7 +4,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const newPhraseInput = document.getElementById('newPhrase');
     const phraseListDiv = document.getElementById('phraseList');
     const clearAllButton = document.getElementById('clearAll');
+    const form = document.getElementById('phraseForm');
+    
+    // Event listener for form submission (Enter key or Add button)
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the default form submission
+        addPhrase();
+    });
 
+    // Function to add a new phrase
+    function addPhrase() {
+        const phrase = newPhraseInput.value.trim();
+        if (phrase) {
+            addPhraseToDisplay(phrase);
+            newPhraseInput.value = '';
+        }
+    }
 
     // Load and display the stored phrases
     chrome.storage.sync.get('filteredPhrases', function(data) {
@@ -20,15 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         phraseListDiv.appendChild(phraseDiv);
     }
 
-    // Add new phrase to the list
-    addPhraseButton.addEventListener('click', function() {
-        const phrase = newPhraseInput.value.trim();
-        if (phrase) {
-            addPhraseToDisplay(phrase);
-            newPhraseInput.value = '';
-        }
-    });
-
     // Save the updated list
     saveButton.addEventListener('click', function() {
         const phrases = Array.from(phraseListDiv.children).map(div => div.textContent);
@@ -37,12 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-     // Event listener for the Clear All button
-     clearAllButton.addEventListener('click', function() {
-        // Clear the displayed phrases
+    // Event listener for the Clear All button
+    clearAllButton.addEventListener('click', function() {
         phraseListDiv.innerHTML = '';
-
-        // Clear the phrases from storage
         chrome.storage.sync.set({ 'filteredPhrases': [] }, function() {
             console.log('All phrases cleared');
         });
