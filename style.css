@@ -1,0 +1,44 @@
+body {
+    width: 320px;
+    padding: 5px;
+}
+
+h1{
+    color:RGBA(255, 86, 0, 1);
+}
+
+#clearAll {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#phraseList {
+    margin-bottom: 10px;
+}
+
+#newPhrase {
+    width: 200px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+button{
+    background-color: gold;
+    border-radius: 25px;
+}
+
+button:hover{
+    background-color:RGBA(255, 86, 0, 1) ;
+}
+
+.phraseDiv {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+    margin-bottom: 5px; /* Spacing between each phrase */
+}
+
+input{
+    border-radius: 20px;
+}
+
+
